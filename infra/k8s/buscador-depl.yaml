@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: buscador-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: buscador
+  template:
+    metadata:
+      labels:
+        app: buscador
+    spec:
+      containers:
+        - name: buscador
+          image: buscador
+          imagePullPolicy: Never
+          env:
+          - name: PORT
+            value: "3000"
+          - name: MONGO_HOST
+            value: "buscador-mongo-srv"
+          - name: MONGO_PORT
+            value: "27017"
+          - name: NATS_HOST
+            value: "nats-srv"
+          - name: NATS_PORT
+            value: "4222"    
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: buscador-srv
+spec:
+  selector:
+    app: buscador
+  ports:
+    - name: buscador
+      protocol: TCP
+      port: 3000
+      targetPort: 3000

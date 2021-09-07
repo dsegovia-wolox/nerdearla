@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: buscador-mongo-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: buscador-mongo
+  template:
+    metadata:
+      labels:
+        app: buscador-mongo
+    spec:
+      containers:
+        - name: buscador-mongo
+          image: mongo
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: buscador-mongo-srv
+spec:
+  selector:
+    app: buscador-mongo
+  ports:
+    - name: db
+      protocol: TCP
+      port: 27017
+      targetPort: 27017

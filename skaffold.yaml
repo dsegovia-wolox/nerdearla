@@ -1,0 +1,26 @@
+apiVersion: skaffold/v2alpha3
+kind: Config
+deploy:
+  kubectl:
+    manifests:
+      - ./infra/k8s/*
+build:
+  local:
+    push: false
+  artifacts:
+    - image: cosas
+      context: cosas
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - src: "cosas/*.js"
+            dest: .
+    - image: buscador
+      context: buscador
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - src: "buscador/*.js"
+            dest: .
