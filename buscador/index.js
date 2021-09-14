@@ -44,9 +44,12 @@ const cosasSchema = mongoose.Schema({
 
 const Cosa = mongoose.model('Cosa', cosasSchema, 'cosastore');
 
-app.get('/api/buscador/', async function (req, res) {
-  console.log(`client response ${client}`)
-  res.json(await Cosa.find())
+app.get('/api/buscador/:texto', async function (req, res) {
+  const texto = req.params.texto;
+  console.log(`buscando "${texto}"`)
+
+  let cosas = await Cosa.find( { 'nombre' : { '$regex' : texto, '$options' : 'i' } } )
+  res.json(cosas)
 }) 
 
  

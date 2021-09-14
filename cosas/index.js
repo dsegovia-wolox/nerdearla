@@ -36,7 +36,6 @@ app.get('/api/cosas', async function (req, res) {
   res.json(await Cosa.find())
 }) 
 
-
 app.get('/api/cosas/todos', async function (req, res) {
   res.json(await Cosa.find())
 }) 
