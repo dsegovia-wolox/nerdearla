@@ -1,0 +1,87 @@
+{
+	"info": {
+		"_postman_id": "8ed13129-1141-40a0-ad45-32b081cac81b",
+		"name": "nerdearla",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "cosas",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nombre\": \"lentes\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://nerdearla.local/api/cosas/",
+					"protocol": "http",
+					"host": [
+						"nerdearla",
+						"local"
+					],
+					"path": [
+						"api",
+						"cosas",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "cosas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://nerdearla.local/api/cosas/",
+					"protocol": "http",
+					"host": [
+						"nerdearla",
+						"local"
+					],
+					"path": [
+						"api",
+						"cosas",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "buscador",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://nerdearla.local/api/buscador/:texto",
+					"protocol": "http",
+					"host": [
+						"nerdearla",
+						"local"
+					],
+					"path": [
+						"api",
+						"buscador",
+						":texto"
+					],
+					"variable": [
+						{
+							"key": "texto",
+							"value": "yes"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
