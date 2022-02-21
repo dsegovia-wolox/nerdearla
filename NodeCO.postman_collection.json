@@ -1,0 +1,75 @@
+{
+	"variables": [],
+	"info": {
+		"name": "NodeCO",
+		"_postman_id": "706a0384-c3ec-2451-a5c5-410877b9789b",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "cosas",
+			"request": {
+				"url": "http://nodeco.local/api/cosas/",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nombre\": \"perro\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "cosas",
+			"request": {
+				"url": "http://nodeco.local/api/cosas/",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "buscador",
+			"request": {
+				"url": {
+					"raw": "http://nerdearla.local/api/buscador/:texto",
+					"protocol": "http",
+					"host": [
+						"nerdearla",
+						"local"
+					],
+					"path": [
+						"api",
+						"buscador",
+						":texto"
+					],
+					"query": [],
+					"variable": [
+						{
+							"key": "texto",
+							"value": "yes"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

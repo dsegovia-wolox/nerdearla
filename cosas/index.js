@@ -14,6 +14,7 @@ stan.on('connect', async () => {
   console.log('Publisher connected to NATS');
 });
 
+
 app.use(express.json())
 
 
@@ -38,8 +39,7 @@ app.get('/api/cosas', async function (req, res) {
 
 app.get('/api/cosas/todos', async function (req, res) {
   res.json(await Cosa.find())
-}) 
-
+})
 
 app.post('/api/cosas', function (req, res) {
   try {
@@ -60,6 +60,10 @@ app.post('/api/cosas', function (req, res) {
     console.log(error)
   }
   
+})
+
+app.get('/api/cosas/ok', async function (req, res){
+  res.json({"msj": "ok from cosas"})
 })
  
 app.listen(process.env.PORT, function(){
