@@ -8,6 +8,7 @@ Pre requisitos
 Docker (Recomendación instalar docker desktop y activar kubertenes)
 Kubernetes
 Skaffold
+Instalar Ngnix Controller: kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.1.1/deploy/static/provider/cloud/deploy.yaml
 ```
 
 Instalación
