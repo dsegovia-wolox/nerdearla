@@ -53,6 +53,7 @@ app.post('/api/cosas', function (req, res) {
         console.log('published message with guid: ' + guid)
       }
     })
+    console.log("agregado " + data)
 
     res.send(req.body);
 
@@ -62,10 +63,6 @@ app.post('/api/cosas', function (req, res) {
   
 })
 
-app.get('/api/cosas/ok', async function (req, res){
-  res.json({"msj": "ok from cosas"})
-})
- 
 app.listen(process.env.PORT, function(){
   console.log(`Server Cosas is listening ${process.env.PORT}`);
 })

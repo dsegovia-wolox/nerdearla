@@ -22,7 +22,7 @@ stan.on('connect', async () => {
 
   stan.subscribe('cosas:add').on('message', (msg) => {
     const data = JSON.parse(msg.getData())
-    console.log(data)
+    console.log("agregado DB de buscador: " + msg.getData())
 
     new Cosa(data).save();
   })
